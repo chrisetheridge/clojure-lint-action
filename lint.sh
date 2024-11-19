@@ -13,7 +13,7 @@ echo "::group::Files to lint"
 echo "${sources}"
 echo "::endgroup::"
 
-clj -Sdeps '{:deps {clj-kondo/clj-kondo {:mvn/version "RELEASE"}}}' -M -m clj-kondo.main \
+clj -Sdeps '{:replace-deps {clj-kondo/clj-kondo {:mvn/version "RELEASE"}}}' -M -m clj-kondo.main \
   --lint $(find "${INPUT_PATH}" -not -path "${INPUT_EXCLUDE}" -type f -name "${INPUT_PATTERN}") \
   --config "${INPUT_CLJ_KONDO_CONFIG}" \
   --config '{:output {:pattern "{{filename}}:{{row}}:{{col}}: {{message}}"}}' \
