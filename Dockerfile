@@ -1,4 +1,4 @@
-FROM clojure:temurin-18-tools-deps-alpine
+FROM clojure:temurin-8-tools-deps-alpine
 
 ENV REVIEWDOG_VERSION=v0.12.0
 
